@@ -6,7 +6,7 @@ class PriorityQueue:
 
     def enqueue(self, item, priority):
         # lower numerical value, higher priority
-        heapq.heappush(self.elements, (priority, item))
+        heapq.heappush(self.items, (priority, item))
     
     def dequeue(self):
         if not self.isEmpty():
@@ -19,4 +19,14 @@ class PriorityQueue:
         return len(self.items) == 0
     
     def size(self):
-        return len(self.items)
+        return len(self.items)#
+    
+
+p_queue = PriorityQueue()
+
+p_queue.enqueue(4, 8)
+p_queue.enqueue(2, 3)
+p_queue.enqueue(1, 2)
+p_queue.enqueue(3, 7)
+
+print(p_queue.dequeue())
